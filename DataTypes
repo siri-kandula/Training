@@ -1,0 +1,89 @@
+TRAINING CLASS 5:
+
+Java:
+ Two data types:
+Primitive and non-primitive
+To check the data type: typeOf
+1.	primitive data type: predefined, we can store single values
+Numbers: integers, float
+Ex: 1, -1, -4.4, 5.8
+String: Stream of characters enclosed in quotes
+   Single, double, backtick quotes
+Boolean: true or false
+Null: empty value or no value
+Undefined: declared variable with no value
+Example:
+let b=3.5
+let a='3.5'
+      console.log(typeof(a))
+        document.write(typeof(a),"<br>")
+        document.write(typeof(b))
+Back ticks: 
+•	Introduced in ES6
+•	Provides extra functionality 
+•	We can insert the variables into them
+Example: 
+     let a=3.5
+     let b=3.5
+        console.log("hi + a")    // hi + a
+        console.log(`hi + ${a}`)   // hi + 3.5
+        console.log("hi + a+b")    // hi + a+b
+        console.log(`hi + ${a+b}`)   //hi + 7
+String Concatenation:
+Example 1:
+        let x="siri"
+        let y="chandana"
+        let age=19
+        let greeting =`I am ${x+" "+y}, my age is ${age}`
+        console.log(greeting)
+        document.write(greeting)
+Example 2:
+        let x="Sai"
+        let y="Kumar"
+        let message=`React.js = ${x+" "+y}`
+        console.log(message)
+        document.write(message)
+
+
+
+// vs code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //let b=3.5
+        //let a='3.5'
+        //console.log(typeof(a))
+        //document.write(typeof(a),"<br>")
+        //document.write(typeof(b))
+            //let a=3.5
+            //let b=3.5
+            //console.log("hi + a")
+            //console.log(`hi + ${a}`)
+            //console.log("hi + a+b")
+            //document.write("hi+ a+b","<br>")
+            //console.log(`hi + ${a+b}`)
+            //document.write(`hi+ ${a+b}`,"<br>")
+        //let x="siri"
+        //let y="chandana"
+        //let age=19
+        //let greeting =`I am ${x+" "+y}, my age is ${age}`
+        //console.log(greeting)
+        //document.write(greeting)
+        //let x="Sai"
+        //let y="Kumar"
+        //let message=`React.js = ${x+" "+y}`
+        //console.log(message)
+        //document.write(message)
+        let x=null
+        console.log(typeof(x))
+        document.write(typeof(x))
+
+    </script>
+</body>
+</html>
