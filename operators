@@ -1,0 +1,144 @@
+TRAINING CLASS 6:
+JavaScript Operators:
+1.	Arithmetic: +, -, *, 
+2.	Division: / (Q)
+3.	Modulus Operator: % (R)
+4.	Exponential (raised to the power): **, ++, --
+Example:
+    <script>
+        let a=10
+        let b=5
+        b++
+        a--
+        document.write(b, "<br>")
+        document.write(a, "<br>")
+        document.write(a%b, "<br>")
+        document.write(a/b, "<br>")
+        document.write(a*b,"<br>")
+        document.write(a**b)
+    </script>
+
+Assignment: +=, -=, /=, %=
+Var student =” swetha”  
+        let a=10
+        let b=5
+        b-=30
+        a+=30
+        document.write(b, "<br>")
+        document.write(a)
+
+Logical Operators: 
+and – T and T =T - &&
+or – T or F = T      - ||
+not -!
+
+
+
+Example:
+             let a=10
+        let b=5     
+        document.write(a>b && b>11, "<br>")
+        document.write(a>b || b>11, "<br>")
+        document.write(!(a<b) && (a>1), "<br>")
+        document.write(!(true))
+
+Relational Operators:
+<, >, <=, >=, ==, ===, !=, !==   (“===” means strict equality)
+        let a=105
+        let b='105'
+        document.write(a==b, "<br>")
+        document.write(a===b, "<br>")
+        document.write(a!=b,"<br>")
+        document.write(a!==b, "<br>")
+o/p:  true
+        false
+        false
+        true
+Conditional or Ternary Operator (?): 
+First evaluates an expression for a true or false
+Syntax:
+Condition ? e1: e2
+Example:
+             let t=40
+        let r=(t>40)? "Ac-off": "Ac-on"
+        document.write(r)
+
+Window Methods in JavaScript:
+alert() – used to print alert messages
+Example:
+alert("Hi Siri")
+console.log(alert)
+
+prompt() – used to take user input
+Example 1:
+let name=prompt("Enter your name: ")
+alert(name)
+
+Example 2:
+        let aa=prompt()
+        let bb=prompt()
+        console.log(typeof(aa))
+        document.write(typeof(aa))
+        console.log(aa+bb)
+        document.write(aa+bb)
+o/p: string35
+Example 3:
+        let aa=parseInt(prompt())
+        let bb=parseInt(prompt())
+        console.log(typeof(aa))
+        document.write(typeof(aa))
+        console.log(aa+bb)
+        document.write(aa+bb)
+o/p: number8
+confirm()
+
+
+
+
+//vs code:
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let aa=parseInt(prompt())
+        let bb=parseInt(prompt())
+        console.log(typeof(aa))
+        document.write(typeof(aa))
+        console.log(aa+bb)
+        document.write(aa+bb)
+        //let name=prompt("Enter your name: ")
+        //alert(name)
+        //alert("Hi Siri")
+        //console.log(alert)
+        //document.write(alert)
+        //let t=40
+        //let r=(t>40)? "Ac-off":"Ac -on"
+        //document.write(r)
+        //let a=105
+        //let b='105'
+        //document.write(a==b, "<br>")
+        //document.write(a===b, "<br>")
+        //document.write(a!=b,"<br>")
+        //document.write(a!==b, "<br>")
+        //b-=30
+        //a+=30
+        //b++
+        //a--
+        //document.write(b, "<br>")
+        //document.write(a, "<br>")
+        //document.write(a%b, "<br>")
+        //document.write(a/b, "<br>")
+        //document.write(a*b,"<br>")
+        //document.write(a**b)
+        //document.write(a>b && b>11, "<br>")
+        //document.write(a>b || b>11, "<br>")
+        //document.write(!(a<b) && (a>1), "<br>")
+        //document.write(!(true))
+    </script>
+</body>
+</html>
