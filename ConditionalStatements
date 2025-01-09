@@ -1,0 +1,113 @@
+TRAINING CLASS 7:
+Conditional Statements:
+•	To make the set of instructions (block of code) execute only when the given condition is true.
+•	Used to decide whether the code has to be executed or skip based on the given condition.
+•	Line by line (sequence)
+Block of code: It will execute only when that specific condition is True.
+Condition: An expression that evaluates a result (True or False)
+Ex: console.log(5>6)
+Methods:
+If: only one possible condition
+If the condition is true, it will execute otherwise it will skip.
+<script>
+        let a=4
+        let b=5
+        if(a<b){
+            document.write("hello Siri","<br>")
+        }
+        document.write("hello chandana")
+</script>
+o/p:  hello Siri
+        hello chandana
+  let a=4
+        let b=5
+        if(a>b){
+            document.write("hello Siri","<br>")
+        }
+        document.write("hello chandana")
+o/p: hello chandana
+If else:
+        let a=4
+        let b=5
+        if(a>b){
+            document.write("hello Siri","<br>")
+        }
+        else{
+            document.write("hello Vinay","<br>")
+        }
+        document.write("hello chandana")
+o/p: hello Vinay
+hello Chandana
+Else if
+  let age=prompt("enter your age:")
+        let name=prompt("enter your name:")
+        if(age<18){
+            alert(name+ "you are too young to marry")
+        }
+        else if(age>35){
+            alert(name+ "you are too old to marry")
+        }
+        else{
+            alert(name+ "perfect age to marry")
+        }
+        alert("welcome to my world")
+Question:
+let scoreA=Number(prompt("enter score of A"))
+        let scoreB=Number(prompt("enter score of B"))
+        let sum=scoreA+scoreB
+        if((scoreA>300 || scoreB>300)&&(sum<500)){
+            alert("can team up")
+        }
+        else{
+            alert("cannot team up")
+        }    
+
+Switch
+Ternary operator
+
+
+
+// vs code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //let a=4
+        //let b=5
+        //if(a<b){
+        //if(a>b){
+        //    document.write("hello Siri","<br>")
+        //}
+        //else{
+          //  document.write("hello Vinay","<br>")
+        //}
+        //document.write("hello chandana")
+        //let age=prompt("enter your age:")
+        //let name=prompt("enter your name:")
+        //if(age<18){
+         //   alert(name+ "you are too young to marry")
+        //}
+        //else if(age>35){
+          //  alert(name+ "you are too old to marry")
+        //}
+        //else{
+          //  alert(name+ "perfect age to marry")
+        //}
+        //alert("welcome to my world")
+        let scoreA=Number(prompt("enter score of A"))
+        let scoreB=Number(prompt("enter score of B"))
+        let sum=scoreA+scoreB
+        if((scoreA>300 || scoreB>300)&&(sum<500)){
+            alert("can team up")
+        }
+        else{
+            alert("cannot team up")
+        }    
+    </script>
+</body>
+</html>
