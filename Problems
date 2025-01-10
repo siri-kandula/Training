@@ -1,0 +1,157 @@
+TRAINING CLASS 8:
+1.	Write a program to check whether the number is divisible by 2 and 3 and both (take prompt)
+ <script>
+        let a=parseInt(prompt("enter number"))
+        if(a%2==0 && a%3==0){
+            alert("divisble by both")
+        }
+        else if(a%2==0){
+            alert("divisible by 2")
+        }
+        else if(a%3==0){
+            alert("divisible by 3")
+        }
+        else{
+            alert("not divisible")
+        }   
+ </script>
+
+2.	Write a program to find the largest number out of three numbers expected from the user
+let a=parseInt(prompt("enter first number"))
+        let b=parseInt(prompt("enter second number"))
+        let c=parseInt(prompt("enter third number"))
+        if(a>b && a>c){
+            alert("a is the largest")
+        }
+        else if(b>a && b>c){
+            alert("b is the largest")
+        }
+        else{
+            alert("c is the largest")
+        }
+
+3.	Accept the following from the user and calculate the percentage of classes attended:
+a)	Total number of working days
+b)	Total number of days for absent
+          After calculating percentage show that, if the percentage is less than 75, then student will not be eligible to write exam.
+let a=parseInt(prompt("enter number of working days"))
+        let b=parseInt(prompt("enter number of days for absent"))
+        percentage=((a-b)/a)*100
+        if(percentage>=75){
+            alert("student is eligible to write exam")
+        }
+        else{
+            alert("student is not eligible to write exam")
+        }
+
+4.	A company decided to give bonus to employee according to the following criteria:
+Time period of Service     bonus
+	More than 10 years               10%
+          >=6 and <=10		    8%
+	Less than 6 years                  5%
+Ask the user for their salary and years of service and print the bonus amount
+ let salary= parseInt(prompt("enter salary"))
+        let years=parseInt(prompt("enter years of service"))
+        if(years>10){
+            bonus=(salary*10)/100
+            alert("bonus is "+bonus)
+            totalsalary=salary+bonus
+            document.write("total salary is "+totalsalary)
+
+        }
+        else if(years>=6 && years<=10){
+            bonus=(salary*8)/100
+            alert("bonus is "+bonus)
+            totalsalary=salary+bonus
+            document.write("total salary is "+totalsalary)
+
+        }
+        else if(years<6){
+            bonus=(salary*5)/100
+            alert("bonus is "+bonus)
+            totalsalary=salary+bonus
+            document.write("total salary is "+totalsalary)
+        }
+        else{
+            alert("no bonus")
+        }
+
+//vs code
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //let a=parseInt(prompt("enter number"))
+        //if(a%2==0 && a%3==0){
+          //  alert("divisble by both")
+        //}
+        //else if(a%2==0){
+        //    alert("divisible by 2")
+        //}
+        //else if(a%3==0){
+        //    alert("divisible by 3")
+        //}
+        //else{
+          //  alert("not divisible")
+        //}  
+        
+        
+       // let a=parseInt(prompt("enter first number"))
+        //let b=parseInt(prompt("enter second number"))
+        //let c=parseInt(prompt("enter third number"))
+        //if(a>b && a>c){
+          //  alert("a is the largest")
+        //}
+        //else if(b>a && b>c){
+          //  alert("b is the largest")
+        //}
+       // else{
+         //   alert("c is the largest")
+        //}
+
+
+        //let a=parseInt(prompt("enter number of working days"))
+        //let b=parseInt(prompt("enter number of days for absent"))
+        //percentage=((a-b)/a)*100
+        //if(percentage>=75){
+          //  alert("student is eligible to write exam")
+        //}
+        //else{
+          //  alert("student is not eligible to write exam")
+        //}
+
+        
+        let salary= parseInt(prompt("enter salary"))
+        let years=parseInt(prompt("enter years of service"))
+        if(years>10){
+            bonus=(salary*10)/100
+            alert("bonus is "+bonus)
+            totalsalary=salary+bonus
+            document.write("total salary is "+totalsalary)
+
+        }
+        else if(years>=6 && years<=10){
+            bonus=(salary*8)/100
+            alert("bonus is "+bonus)
+            totalsalary=salary+bonus
+            document.write("total salary is "+totalsalary)
+
+        }
+        else if(years<6){
+            bonus=(salary*5)/100
+            alert("bonus is "+bonus)
+            totalsalary=salary+bonus
+            document.write("total salary is "+totalsalary)
+        }
+        else{
+            alert("no bonus")
+        }
+    </script>
+</body>
+</html>
