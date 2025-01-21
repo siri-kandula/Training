@@ -1,0 +1,137 @@
+ TRAINING CLASS 12:
+2.	For in
+const a=”ramya”
+for (let i in a){
+console.log(a[i]);
+}
+3.	For of
+const b=[“ramya”, “sam”, “kavya”]
+for(let bb of b){
+console.log(bb);
+}
+4.	While
+Example 1: 
+let i=1, n=5;
+while(i<=n){
+    console.log(i);
+     i=i+1;
+}
+Example 2:
+let i=2, n=8;
+while(i<=n){
+console.log(i+1)
+i=i+2;
+}
+o/p: 3
+       5
+       7
+       9
+//i=2;  2<=8;  i=i+1=2+1=3
+         //i=i+2= 2+2=4
+         // i=4; 4<=8; 4+1=5; 
+          // 4+2=6
+        // i=6;  6<=8; 6+1=7
+          i=6+2=8
+       //i=8; 8<=8; 8+1=9
+5.	Do while
+Example 1:
+let c=0;
+do{
+   console.log(“count is: “+c);
+   c++
+}
+while(c<5);
+o/p: 
+count is: 0
+count is: 1
+count is: 2
+count is: 3
+count is: 4
+
+break and continue
+Example:
+for(let i=2;i<=8; i=i+1){
+   if(i==4){
+      break;
+   }
+   console.log(i)
+          }
+         Example:
+    for(let i=2;i<=8; i=i+2){   
+   if(i>4){
+      break;
+   }
+   console.log(i+1)
+          }
+       o/p:  3 
+               5
+       //i=2; i<4; i+1= 2+1 =3
+     //i=i+2= 2+2=4
+    //i=4; i>4 - F; 4+1=5
+   // 4+2=6
+  //i=6; 6>4 – T ; so break;
+
+Continue:
+for(let i=2;i<=8; i=i+2){   
+   if(i>4){
+      continue;
+   }
+   console.log(i+1)
+          }
+
+
+
+// vs-code
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //const a="ramya"
+        //for (let i in a){
+         //   console.log(a[i]);
+           // document.write(a[i],'<br>')
+        //}
+        //const b=["ramya", "sam", "kavya"]
+        //for(let bb of b){
+        //console.log(bb);
+        //}
+        
+        //let i=1, n=5;
+        //while(i<=n){
+          //  console.log(i);
+            //i=i+1;
+        //}
+        //let i=2, n=8;
+        //while(i<=n){
+        //    console.log(i+1)
+         //   i=i+2;
+        //}
+        //let c=0;
+        //do{
+          //  console.log("count is: "+c);
+            //c++;
+            //}
+           // while(c<5);
+        for(let i=2;i<=8; i=i+2){
+            if(i>4){
+               continue;
+            }
+            console.log(i+1)
+        }
+        //for(let i=2;i<=8; i=i+2){   
+         //   if(i>4){
+           //    break;
+            //}
+            //console.log(i+1)
+              //     }
+         
+         
+    </script>
+</body>
+</html>
