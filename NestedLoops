@@ -1,0 +1,165 @@
+TRAINING CLASS 13:
+Continue:
+Example 1:
+for(let i=2;i<=8; i=i+2){   
+   if(i>4){
+      continue;
+   }
+   console.log(i+1)
+          }
+o/p: 3 
+       5
+Example 2:
+for(let i=1;i<=8; i=i+2){   
+            if(i>5){
+              continue;
+            }
+            console.log(i+1)
+                }
+o/p: 2
+       4
+       6
+//i=1; 1<=8; i+1= 1+1 =2
+     //i=i+2= 1+2=3
+    //i=3; 3<=8; 3+1=4
+   // 3+2=5
+  //i=5; 5<=8; 5+1=6
+ //5+2=7
+//i=7; 7<=8; 7>5 so continue;
+
+Example 3:
+for(let i=2; i<=8; i=i+1){   
+            if(i>5) {
+              continue;
+            }
+            console.log(i+2)
+                }
+o/p: 
+// i=2; 2<=8; 2+2=4
+//i=i+1= 2+1=3
+//i=3; 3<=8; 3+2=5
+//3+1=4
+//i=4; 4<=8; 4+2=6
+//4+1=5
+//i=5; 5<=8; 5+2=7
+//5+1=6
+//i=6; 6<=8; 6>5 so continue
+
+Nested Loops:
+A loop inside another loop
+The inner loop will execute one time for each iteration of outer loop
+An inner loop within the repeating block of outer loop
+Example 1:
+        for(let i=1; i<=3; i++){
+            document.write(i,"<br>");
+        for(let j=1;j<=4;j++){
+            document.write(j," ");
+        }
+        document.write("<br>")
+        }
+o/p: 1
+       1 2 3 4
+       2
+       1 2 3 4
+       3
+       1 2 3 4
+//outer loop: 1
+//inner loop: 1 2 3 4 (will execute completely)
+//outer loop: 2
+//inner loop: 1 2 3 4
+//outer loop: 3
+//inner loop: 1 2 3 4
+Example 2:
+        for(let i=1;i<=5;i++){
+            for(let j=1;j<=i;j++){
+                document.write('*')
+            }
+            document.write("<br>")
+        }
+o/p: *
+     **
+     ***
+     ****
+     *****
+Example 3:
+ for (let i = 1; i <= 5; i++) {
+            for (let j = 1; j <= 5 - i; j++) {
+                document.write('&nbsp;'); 
+            }
+            for (let k = 1; k <= 2 * i - 1; k++) {
+                document.write('*');
+            }
+            document.write('<br>');
+        }
+o/p:
+     *
+    ***
+   *****
+  *******
+ *********
+
+
+
+
+//vs code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+     //   for(let i=1;i<=8; i=i+2){   
+       //     if(i>5){
+         //     continue;
+           // }
+            //console.log(i+1)
+        //}
+    
+        //for(let i=2;i<=8; i=i+1){   
+          //  if(i>5){
+            //  continue;
+            //}
+            //console.log(i+2)
+        //}
+
+        //for(let i=1; i<=3; i++){
+          //  document.write(i,"<br>");
+        //for(let j=1;j<=4;j++){
+          //  document.write(j," ");
+        //}
+        //document.write("<br>")
+        //}
+        //for(let i=1;i<=5;i++){
+          //  for(let j=1;j<=i;j++){
+            //    document.write('*')
+            //}
+            //document.write("<br>")
+        //}
+
+        for (let i = 1; i <= 5; i++) {
+            for (let j = 1; j <= 5 - i; j++) {
+                document.write('&nbsp;'); 
+            }
+            for (let k = 1; k <= 2 * i - 1; k++) {
+                document.write('*');
+            }
+            document.write('<br>');
+        }
+
+        
+        for (let i = 1; i <= 4; i++) {
+            for (let j = 1; j <= 4 - i; j++) {
+              document.write("&nbsp;");
+            }
+            for (let k = 1; k <= i; k++) {
+              document.write("*");
+            }
+            document.write("<br>");
+          }
+          document.write("<br>");
+    </script>
+</body>
+</html>
