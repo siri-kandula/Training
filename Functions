@@ -1,0 +1,195 @@
+TRAINING CLASS 14:
+Functions:
+A function is reusable block of code
+It can be call anywhere in the program
+Reusable code: using an existing code without writing it every time we need.
+You can use the same code with different arguments to get the results.
+In js, we use function keyword to define a function.
+Parameters- values(variables) which are declared inside the () while defining a function.
+Arguments- values which are passed through the parameters at the time of calling the function.
+Example 1:
+<script>
+        function greet(){
+            console.log("Hello, Siri");
+        }
+        greet()
+        console.log("hi vinay")
+        greet()
+</script>
+o/p: Hello, Siri 
+        hi vinay 
+       Hello, Siri
+Example (function with parameters):
+        function s(name){
+            console.log("Hello, " + name);
+        }
+        let name=prompt("Enter your name?")
+        s(name)
+o/p: Hello, Chandana
+Example 2:
+        function s(a,b){
+            console.log(a+b);
+        }
+        let a=parseInt(prompt("Enter first number"))
+        let b=parseInt(prompt("Enter second number"))
+        s(a,b)
+
+Example (using return): 
+function s(aa,bb){
+            return aa+bb;
+        }
+        let n1=parseFloat(prompt("Enter first number"))
+        let n2=parseFloat(prompt("Enter second number"))
+        let result=s(n1,n2);
+        console.log("The sum is:"+result);
+
+
+Anonymous function:
+A function without name, after we create a function without name and we assign it to a variable.
+Example:
+sum=function(n1, n2){
+let r=n1+n2
+return r
+}
+console.log(sum(8,10))
+o/p: 18
+
+write a program to check given number is prime or not
+function isPrime(num) {
+            if (num <= 1) {
+                return false; 
+            }
+            for (let i = 2; i <= Math.sqrt(num); i++) {
+                if (num % i === 0) {
+                    return false; 
+                }
+            }
+            return true; 
+        }
+        const number = parseInt(prompt("Enter a number:"));
+
+        if (isPrime(number)) {
+            console.log(`${number} is a prime number.`);
+        } else {
+            console.log(`${number} is not a prime number.`);
+        }         
+
+//Fibonacci series 0 1 1 2 3 5 8 13
+function fibonacci(n) {
+    if (n <= 0) {
+        return []; 
+    }
+    if (n === 1) {
+        return [0]; 
+    }
+    const fibSeries = [0, 1]; 
+    for (let i = 2; i < n; i++) {
+        fibSeries.push(fibSeries[i - 1] + fibSeries[i - 2]); 
+    }
+    return fibSeries;
+}
+const terms = parseInt(prompt("Enter the numbers:"));
+
+if (terms > 0) {
+    console.log(`Fibonacci series with ${terms} terms:`, fibonacci(terms));
+} else {
+    console.log("Please enter a positive integer.");
+}
+
+//leap year
+//Armstrong number
+//palindrome 1 21 1 2 1
+//Pattern
+
+
+//vs code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       // function greet(){
+         //   console.log("Hello, Siri");
+        //}
+        //greet()
+        //console.log("hi vinay")
+        //greet()
+
+        //function s(name){
+          //  console.log("Hello, " + name);
+        //}
+        //let name=prompt("Enter your name?")
+        //s(name)
+
+       // function s(a,b){
+         //   console.log(a+b);
+        //}
+        //let a=parseInt(prompt("Enter first number"))
+        //let b=parseInt(prompt("Enter second number"))
+        //s(a,b)
+
+        //function s(aa,bb){
+          //  return aa+bb;
+        //}
+        //let n1=parseFloat(prompt("Enter first number"))
+        //let n2=parseFloat(prompt("Enter second number"))
+        //let result=s(n1,n2);
+        //console.log("The sum is:"+result);
+        //document.write("The sum is:"+result)
+
+        //sum=function(n1,n2){
+         //   let r=n1+n2
+          //  return r
+            //}
+            //console.log(sum(8,10))
+        
+        // Function to check if a number is prime
+        //function isPrime(num) {
+          //  if (num <= 1) {
+            //    return false; 
+            //}
+            //for (let i = 2; i <= Math.sqrt(num); i++) {
+              //  if (num % i === 0) {
+                //    return false; 
+                //}
+           // }
+            //return true; 
+        //}
+        //const number = parseInt(prompt("Enter a number:"));
+
+        //if (isPrime(number)) {
+          //  console.log(`${number} is a prime number.`);
+        //} else {
+          //  console.log(`${number} is not a prime number.`);
+        //}
+        
+        // Function to generate Fibonacci series
+
+    function fibonacci(n) {
+    if (n <= 0) {
+        return []; 
+    }
+    if (n === 1) {
+        return [0]; 
+    }
+    const fibSeries = [0, 1]; 
+    for (let i = 2; i < n; i++) {
+        fibSeries.push(fibSeries[i - 1] + fibSeries[i - 2]); 
+    }
+    return fibSeries;
+}
+const terms = parseInt(prompt("Enter the numbers:"));
+
+if (terms > 0) {
+    console.log(`Fibonacci series with ${terms} terms:`, fibonacci(terms));
+} else {
+    console.log("Please enter a positive integer.");
+}
+         
+    </script>
+</body>
+</html>
