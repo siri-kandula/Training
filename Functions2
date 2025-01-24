@@ -1,0 +1,144 @@
+TRAINING CLASS 15:
+Arrow Functions:
+ES6 version
+More readable and more structure
+Anonymous functions (lambda functions)
+Without function name but they are assigned to a variable
+Example:
+Arrow functions without parameter
+let C= () => {
+console.log (“hi siri”)
+}
+C() 
+
+
+Arrow functions with parameter
+Example:
+        let s=(x,y)=>{
+            console.log(x+y)
+            document.write(x+y,"<br>")
+        } 
+        s(20,30)
+        s(40,50) 
+
+Arrow function with one argument
+let greet=x=>console.log(x);
+greet(‘hello’)
+
+Arrow function without argument
+let greet=()=>console.log(“hello”);
+greet()
+
+Arrow functions as an expression
+        let age=18;
+        let welcome=(age<18)?
+        ()=>console.log("hi Siri"):
+        ()=>console.log("hello vinay");
+        welcome()
+o/p: hello vinay
+
+Synchronous function:
+Execute step by step
+function task1(){
+            console.log("Task1: Load");
+        }
+        function task2(){
+            console.log("Task2: Load");
+        }
+        function task3(){
+            console.log("Task3: Load");
+        }
+        task1()
+        task2()
+        task3()
+
+Asynchronous function:
+	Multiple tasks at a time
+console.log("hi siri kandula")
+        setTimeout(()=>{
+            console.log("Iam at Store")
+        },5000);
+        console.log("Come here")
+
+JavaScript Callbacks:
+A call back function is a function that is passed as argument to another function
+        function greet(name,callback){
+            console.log(`Hello,${name}!`);
+            callback();
+        }
+        function sayGoodbye(){
+            console.log("Goodbye!");
+        }
+        greet("Siri",sayGoodbye);
+o/p: 
+Hello,Siri!
+Goodbye!
+
+
+
+//vs code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //let C= () => {
+          //  console.log ("hi siri")
+           // }
+            //C() 
+
+        //let s=(x,y)=>{
+          //  console.log(x+y)
+            //document.write(x+y,"<br>")
+        //} 
+        //s(20,30)
+        //s(40,50)
+        
+       // let greet=x=>
+        //console.log(x);
+        //greet("hello")
+
+      //  let greet=()=>
+       // console.log("hello");
+        //greet()
+
+      //  let age=18;
+        //let welcome=(age<18)?
+        //()=>console.log("hi Siri"):
+        //()=>console.log("hello vinay");
+        //welcome()
+
+       // function task1(){
+         //   console.log("Task1: Load");
+        //}
+        //function task2(){
+          //  console.log("Task2: Load");
+        //}
+        //function task3(){
+          //  console.log("Task3: Load");
+        //}
+        //task1()
+        //task2()
+        //task3()
+
+        //console.log("hi siri kandula")
+        //setTimeout(()=>{
+          //  console.log("Iam at ")
+        //},5000);
+        //console.log("Come here")
+        function greet(name,callback){
+            console.log(`Hello,${name}!`);
+            callback();
+        }
+        function sayGoodbye(){
+            console.log("Goodbye!");
+        }
+        greet("Siri",sayGoodbye);
+
+    </script>
+</body>
+</html>
