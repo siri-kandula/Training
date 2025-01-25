@@ -1,0 +1,79 @@
+TRAINING CLASS 16:
+JavaScript Callbacks:
+A call back function is a function that is passed as argument to another function
+The function receiving the callback will execute at some point during its executions(often at the end or after an asynchronous operation is done)
+        function greet(name,callback){
+            console.log(`Hello,${name}!`);
+            callback();
+        }
+        function sayGoodbye(){
+            console.log("Goodbye!");
+        }
+        greet("Siri",sayGoodbye);
+o/p: 
+Hello,Siri!
+Goodbye!
+Example :( using an anonymous function as a callback)
+function greet(name,callback){
+            console.log(`Hello,${name}!`);
+            callback();
+        }
+       // word=function(){
+         //   console.log("Goodbye!");
+        //}
+        //greet("Siri",word);
+        greet("Siri",function(){
+            console.log("Goodbye!");
+Example :(Asynchronous callback with setTimeout)
+function fetchData(callback){
+            console.log("Fetching data...")
+        setTimeout(function(){
+            console.log("Data fetched...");
+            callback() //executes callback after a delay
+        },2000);
+        }
+        function processData(){
+            console.log("Processing fetched data...")
+        }
+        fetchData(processData);
+o/p:
+Fetching data...
+Data fetched...
+Processing fetched data...
+
+
+//vs code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //function greet(name,callback){
+          //  console.log(`Hello,${name}!`);
+            //callback();
+        //}
+       // word=function(){
+         //   console.log("Goodbye!");
+        //}
+        //greet("Siri",word);
+        ////greet("Siri",function(){
+            //console.log("Goodbye!");
+        //})
+        function fetchData(callback){
+            console.log("Fetching data...")
+        setTimeout(function(){
+            console.log("Data fetched...");
+            callback() //executes callback after a delay
+        },2000);
+        }
+        function processData(){
+            console.log("Processing fetched data...")
+        }
+        fetchData(processData);
+    </script>
+</body>
+</html>
