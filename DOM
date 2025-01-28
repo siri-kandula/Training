@@ -1,0 +1,84 @@
+TRAINING CLASS 18:
+DOM (Document Object Model)
+•	It is a programming interface in web development that allows us to interact and manipulate the html documents.
+•	When the web page is loaded, the browser creates the DOM of the webpage
+•	When the html file is loaded into the browser, the javascript cannot understand the html document directly.
+•	DOM is basically the representation of the same html document but in a tree-like structure composed of objects
+•	HTML dom allows the javascript to access (to get) and modify all the elements in HTML document.
+
+Key points:
+Structure: Each node in a tree represents the element, an attribute, text
+Manipulation: using js, you can interact with elements (button, h, p), we can modify, add, remove elements, change styles
+Event Handling
+W3C- World 
+ 
+
+<html>
+	<head> 
+                  <title> MRU </title>
+	</head>
+	<body>
+	        <h1> I am Siri </h1>
+	</body>
+</html
+
+In DOM, all html elements are defined objs.
+Property: is a value that you can set to the objects
+Method: an action    
+Methods of DOM:
+Getting Element
+1.	Getting an element by id
+2.	Getting an element by class
+•	Returns all the elements having the same class name
+•	Returns in the form of html collection object
+3.	Getting an element by tag name
+4.	Getting an element by query selector
+
+
+//vs code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+        .a{
+            color:blue;
+        }
+        .b{
+            color:  rgb(50, 255, 47);
+        }
+        .c{
+            color: red;
+        }
+    </style>
+<body>
+    <h1 class="b" id="a">Siri Chandana</h1>
+    <h2 class="a" id="b">Chehitha</h2>
+    <h1 class="b" id="a">Vinay Kumar</h1>
+    <h1 class="c" id="b">Saaimah</h1>
+    <h2 class="b" id="a">Nikhil</h2>
+    <h1 class="c" id="c">Mufeez</h1>
+    <h2 class="a" id="c">Tejasri</h2>
+    
+
+    <script>
+     //   let x = document.getElementById("a");
+     //   console.log(x);
+
+     //let x = document.getElementsByClassName("a");
+     //console.log(x);
+
+     let x = document.getElementsByTagName("h2");
+    // console.log(x);
+
+    for(let i=0;i<x.length;i++){
+        console.log(x[i])
+    }
+     
+     
+    </script>
+</body>
+</html>
