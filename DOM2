@@ -1,0 +1,102 @@
+TRAINING CLASS 19:
+An HTML collection is array like list of HTML elements
+Length property provides the size of the collection.	
+getElementsByClassName:
+<h1 class="b" >Siri Chandana</h1>
+    <h2 class="a" >Chehitha</h2>
+    <h1 class="b" >Vinay Kumar</h1>
+    <script>
+       let x=document.getElementsByClassName('b')
+        console.log(x);
+
+       for(let i=0;i<x.length;i++){
+          console.log(x[i])
+       }
+
+
+QuerySelector: used to select HTML element by its classname, tagname, it selects only the first element
+Example: 
+<h1 class="b" >Siri Chandana</h1>
+    <h2 class="a" >Chehitha</h2>
+    <h1 class="b" >Vinay Kumar</h1>
+    <script>
+        let x=document.querySelector('h1')
+        console.log(x)
+    </script>
+
+querySelectorAll:
+let x=document.querySelectorAll('h1')
+       console.log(x)
+
+Manipulate Elements:
+const t=["siri", "Vinay", "Chehitha" ]
+        for(let i=0; i<t.length;i++){
+            let h=document.createElement('h2')
+            h.className="ss"
+            h.textContent=t[i];
+            console.log(h)
+        }
+
+        let title
+        for(let i=0;i<3;i++){
+            Title=document.createElement('h1')
+            Title.className="b"
+            Title.textContent=i
+            console.log(Title)
+        }
+
+//VS CODE
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 class="b" >Siri Chandana</h1>
+    <h2 class="a" >Chehitha</h2>
+    <h1 class="b" >Vinay Kumar</h1>
+    <script>
+       // let x=document.getElementsByClassName('b')
+        //console.log(x);
+
+       // for(let i=0;i<x.length;i++){
+         //   console.log(x[i])
+        //}
+       // let x=document.getElementsByTagName('h1');
+        //console.log(x)
+
+        //for(let i=0;i<x.length;i++){
+          //  console.log(x[i])
+        //}
+        //let x=document.querySelector('h1')
+       // console.log(x)
+
+       //let x=document.querySelectorAll('h1')
+       //console.log(x)
+
+        //let t=document.createElement('h2')
+        //t.className="tt"
+        //t.textContent="Hello Siri"
+        //console.log(t)
+        //document.body.appendChild(t)
+
+        const t=["siri", "Vinay", "Chehitha" ]
+        for(let i=0; i<t.length;i++){
+            let h=document.createElement('h2')
+            h.className="ss"
+            h.textContent=t[i];
+            console.log(h)
+        }
+
+        let title
+        for(let i=0;i<3;i++){
+            Title=document.createElement('h1')
+            Title.className="b"
+            Title.textContent=i
+            console.log(Title)
+        }
+    </script>
+</body>
+</html>
