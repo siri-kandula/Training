@@ -1,0 +1,92 @@
+TRAINING CLASS 20:
+Multiple elements:
+To remove child elements from the parent -removeChild()
+<body>
+    <h1>Removing childNode</h1>
+    <h2>Iam in wgl</h2>
+    <ul>
+        <li>Siri</li>
+        <li>Vinay</li>
+        <li>Chikki</li>
+    </ul>
+
+    <script>
+        const ul=document.querySelector('ul')
+        const lists=document.querySelectorAll('li')
+        console.log(ul)
+        console.log(lists)
+        for(const list of lists){
+            console.log(`Removing: ${list.textContent}`)
+            ul.removeChild(list)
+            console.log(lists)
+            console.log(list)
+        }
+    </script>
+</body>
+
+To append a new element to a parent node:
+appendChild()
+ <div id="a">
+    <h1>Appending childNode</h1>
+    <h1>Iam in wgl</h1>
+</div>
+
+    <div id="b"></div>
+        <h2>Vinay</h2>
+        <h2>Chikki</h2>
+</div>
+
+    <script>
+        let n=document.createElement('h2')
+        n.textContent="siri"
+
+        let p=document.getElementById('b')
+        console.log(p.innerText)
+        p.appendChild(n)
+
+        console.log(p.innerText)
+
+    </script>
+//vs code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="a">
+    <h1>Appending childNode</h1>
+    <h1>Iam in wgl</h1>
+</div>
+
+    <div id="b"></div>
+        <h2>Vinay</h2>
+        <h2>Chikki</h2>
+</div>
+
+    <script>
+        let n=document.createElement('h2')
+        n.textContent="siri"
+
+        let p=document.getElementById('b')
+        console.log(p.innerText)
+
+        p.appendChild(n)
+
+        console.log(p.innerText)
+        //const ul=document.querySelector('ul')
+        //const lists=document.querySelectorAll('li')
+        //console.log(ul)
+        //console.log(lists)
+        //for(const list of lists){
+          //  console.log(`Removing: ${list.textContent}`)
+            //ul.removeChild(list)
+            //console.log(lists)
+            //console.log(list)
+        //}
+
+    </script>
+</body>
+</html>
