@@ -1,0 +1,127 @@
+TRAINING CLASS 21:
+DOM Methods:
+1.	Create- Element (single, multiple)
+2.	appendChild() #parent at the end
+3.	insertBefore(): insert a new node before an existing node as child node of a specified Parent.
+Requires a reference to both the new node and existing node.
+
+ <div id="a">
+        <h1>Siri</h1>
+        <h1 id="v">Vinay</h1>
+    </div>
+
+    <div id="b">
+        <h2>Saaimah</h2>
+        <h2 id="ch">Chehitha</h2>
+    </div>
+    <script>
+        // to insert chikki before vinay
+        let x=document.createElement('h1')
+        x.textContent="chikki"
+        let s = document.getElementById("a");
+        let p=document.getElementById("v")
+        s.insertBefore(x,p)
+
+        //to insert john before Chehitha
+        let y=document.createElement('h2')
+        y.textContent="john"
+        let q = document.getElementById("b");
+        let r=document.getElementById("ch");
+        q.insertBefore(y,r)
+    </script>
+o/p: 
+Siri
+chikki
+Vinay
+Saaimah
+john
+Chehitha
+
+Remove element:
+Let b=document.getElementByID(‘a’)
+b.remove()
+To remove child element:
+removeChild(): 
+<div id="a">
+        <h1>Siri</h1>
+        <h1 id="v">Vinay</h1>
+    </div>
+
+    <div id="b">
+        <h2>Saaimah</h2>
+        <h2 id="ch">Chehitha</h2>
+    </div>
+    <script>
+        let p=document.getElementById("a")
+        let x=document.getElementById("v")
+        console.log(x)
+        p.removeChild(x)
+o/p: 
+Siri
+Saaimah
+Chehitha
+
+To replace an element:
+“MallaReddy University – replaceChildren
+<div id="a">
+        <h1>Siri</h1>
+        <h1 id="v">Vinay</h1>
+    </div>
+
+    <div id="b">
+        <h2>Saaimah</h2>
+        <h2 id="ch">Chehitha</h2>
+    </div>
+    <script>
+
+        let n=document.createElement('h1')
+        n.textContent="MallaReddy University"
+        let p=document.getElementById("a")
+        p.replaceChildren(n)
+
+Replace saaimah with vinay
+
+
+//vs code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="a">
+        <h1>Siri</h1>
+        <h1 id="v">Vinay</h1>
+    </div>
+
+    <div id="b">
+        <h2>Saaimah</h2>
+        <h2 id="ch">Chehitha</h2>
+    </div>
+    <script>
+        // to insert chikki before vinay
+      //  let x=document.createElement('h1')
+        //x.textContent="chikki"
+        //let s = document.getElementById("a");
+        //let p=document.getElementById("v")
+        //s.insertBefore(x,p)
+
+        //to insert john before Chehitha
+        //let y=document.createElement('h2')
+        //y.textContent="john"
+        //let q = document.getElementById("b");
+        //let r=document.getElementById("ch");
+        //q.insertBefore(y,r)
+
+        let n=document.createElement('h1')
+        n.textContent="MallaReddy University"
+        let p=document.getElementById("a")
+        p.replaceChildren(n)
+        //console.log(x)
+        //p.removeChild(x)
+
+    </script>
+</body>
+</html>
