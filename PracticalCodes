@@ -1,0 +1,89 @@
+Vote Eligibilty:
+<script>
+    let age= parseInt(prompt("Enter your age"))
+    let citizen=prompt("Enter yes or no")
+    let citizenShip=prompt("Enter passed or not?")
+    if (age>=18){
+        alert("eligible to vote")
+        
+    }
+    else if(citizen=="yes" || citizenShip=="passed"){
+        alert("eligible to vote")
+    }
+    else if(citizen!="yes" && citizenship=="passed"){
+        alert("eligible to vote")
+    }
+    else{
+        alert("not eligible to vote")
+    }
+</script>
+
+
+Discount eligibility:
+let price = parseInt(prompt("Enter the price in rupees"));
+    let premiumMember = prompt("Enter yes or no");    
+    let discount;
+    if (price > 100) {
+        discount = "20%";
+    } 
+    else if (price > 50 && price <= 100) {
+        discount = "10%";
+    } 
+    else if (premiumMember === "yes") {
+        discount = "5%"; 
+    } 
+    else {
+        discount = "0%";
+    }
+    
+    alert("Discount: " + discount);
+    
+
+
+
+//vs code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+   // let age= parseInt(prompt("Enter your age"))
+   // let citizen=prompt("Enter yes or no")
+   // let citizenShip=prompt("Enter passed or not?")
+    //if (age>=18){
+      //  alert("eligible to vote")        
+    //}
+    //else if(citizen=="yes" || citizenShip=="passed"){
+      //  alert("eligible to vote")
+   // }
+   // else if(citizen!="yes" && citizenship=="passed"){
+     //   alert("eligible to vote")
+    //}
+    //else{
+      //  alert("not eligible to vote")
+    //}
+    let price = parseInt(prompt("Enter the price in rupees"));
+    let premiumMember = prompt("Enter yes or no");    
+    let discount;
+    if (price > 100) {
+        discount = "20%";
+    } 
+    else if (price > 50 && price <= 100) {
+        discount = "10%";
+    } 
+    else if (premiumMember === "yes") {
+        discount = "5%"; 
+    } 
+    else {
+        discount = "0%";
+    }
+    
+    alert("Discount: " + discount);
+    
+</script>
+</body>
+</html>
