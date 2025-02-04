@@ -1,0 +1,72 @@
+REACT:
+Create  element by using js:
+---document.createElement(‘h1’)
+Create element by using React-js:
+React.createElement(‘h1’)
+Syntax:
+React.createElement(type,props)
+Type = tagname(h1, p, div)
+Prop = id, className, Onclick
+
+ReactDom.createRoot()
+ReactDom.render() -method is used to display the element
+Syntax:
+ReactElement= what to render
+Container = where to render
+
+JSX:
+JavaScript XML
+-it is a syntax extension for j
+here we write the html code and this will be translated into js
+Babel -tool 
+Points:
+<br/>
+<img/>
+Class =className
+
+<div id="app"></div>
+    <script type="text/babel">
+        const element=<h1 className='a'>Hello JSX!</h1>
+        const e=document.getElementById('app')
+        const root=ReactDOM.createRoot(e)
+        root.render(element)
+    </script>
+
+
+
+Expressions in jsx:
+ <div id="app"></div>
+    <script type="text/babel">
+        const n=10;
+        const m=<h1>React is {n*2} times better</h1>
+        const e=document.getElementById('app')
+        const root=ReactDOM.createRoot(e)
+        root.render(m)
+    </script>
+
+//vs code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    
+    <div id="app"></div>
+    <script type="text/babel">
+        const n=10;
+        const m=<h1>React is {n*2} times better</h1>
+        //const element=<h1 className='a'>Hello JSX!</h1>
+        const e=document.getElementById('app')
+        const root=ReactDOM.createRoot(e)
+        root.render(m)
+    </script>
+
+</body>
+</html>
+
