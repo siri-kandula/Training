@@ -1,0 +1,128 @@
+To create an element in react js
+React.createElement()
+Syntax:
+Type=tag name (h1, p, div)
+Prop=class, id
+ReactDOM
+
+<title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+</head>
+<body>
+    <div id="a"></div>
+    <script>
+        const b=React.createElement('h1',{id:'c'}, "I am Siri Chandana")
+        const e=document.getElementById('a')
+        const root=ReactDOM.createRoot(e)
+        root.render(b)
+    </script>
+
+
+JSX:
+Javascript XML
+It is syntax extension for javascript
+Jsx allows us to write HTML code in react js
+Jsx all the html tags must be closed
+Jsx compiles the html code to js
+Babel is a tool in jsx;
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="a"></div>
+    <script type="text/babel">
+        const element=<h1 className="aa"> Welcome to Siri Solutions</h1>
+        const e=document.getElementById('a')
+        const root=ReactDOM.createRoot(e)
+        root.render(element)
+    </script>
+</body>
+
+Conditional Rendering:
+<div id="root"></div>
+    <script type="text/babel">
+        const App=()=>{
+            const isloggedIn=true;
+            return(
+            <div>
+                {isloggedIn?(<h1>Welcome back, User</h1>):(<h1> Please Log in</h1>)}
+                {isloggedIn&&<h1> You have a new notification</h1> }
+            </div>
+            );
+        };
+        const root=ReactDOM.createRoot(document.getElementById('root'))
+        root.render(<App/>)
+</script>
+
+o/p: 
+Welcome back, User
+You have a new notification
+Functions:
+Using a function call:
+You can use a function call directly within the jsx expression.
+<div id="a"></div>
+    <script type="text/babel">
+        function getGreeting(name){
+            return `Hello, ${name}! Welcome to React`;
+        }
+        function Greeting(){
+            const name="Siri"
+            return <h1>{getGreeting(name)}</h1>
+        }
+        const root=ReactDOM.createRoot(document.getElementById('a'))
+        root.render(<Greeting/>)
+    </script>
+o/p: Hello, Siri! Welcome to React
+
+//vs code
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+<script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+</head>
+<body>
+    <div id="a"></div>
+    <script type="text/babel">
+        function getGreeting(name){
+            return `Hello, ${name}! Welcome to React`;
+        }
+        function Greeting(){
+            const name="Siri"
+            return <h1>{getGreeting(name)}</h1>
+        }
+        const root=ReactDOM.createRoot(document.getElementById('a'))
+        root.render(<Greeting/>)
+    </script>
+
+
+        <div id="root"></div>
+        <script type="text/babel">
+            const App=()=>{
+                const isloggedIn=true;
+                return(
+                <div>
+                    {isloggedIn?(<h1>Welcome back, User</h1>):(<h1> Please Log in</h1>)}
+                    {isloggedIn&&<h1> You have a new notification</h1> }
+                </div>
+                );
+            };
+            const root=ReactDOM.createRoot(document.getElementById('root'))
+            root.render(<App/>)
+            //const element=<h1 className="aa"> Welcome to Siri Solutions</h1>
+            //const e=document.getElementById('a')
+            //const b=React.createElement('h1',{id:'c'}, "I am Siri Chandana")
+            //const e=document.getElementById('a')
+            //const root=ReactDOM.createRoot(e)
+            //root.render(b)
+            //root.render(element)
+        </script>
+
+        
+    
+</body>
+</html>
