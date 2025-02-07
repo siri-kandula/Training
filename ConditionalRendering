@@ -1,0 +1,135 @@
+Conditional Rendering:
+Greeting.js:
+import React from 'react';
+function Greeting({isLoggedIn}){
+    if (isLoggedIn) {
+        return <h1 className='greeting'>Welcome back!</h1>;
+        } else {
+            return <h1 className='greeting'>Please sign in.</h1>;
+        }
+}
+export default Greeting;
+
+
+App.js:
+import React from 'react'
+import './App.css'
+import Greeting from './Greeting'
+
+function App(){
+  const isLoggedIn=true;
+  return (
+    <div className="App">
+      <Greeting isLoggedIn={isLoggedIn}/>
+    </div>
+  );
+}
+export default App;
+
+
+App.css:
+.greeting{
+  color: lightcoral;
+  font-size: 80px;
+  background-color:black;
+  text-align:center;
+  width: auto;
+  margin-left: 60px;
+  margin-right: 60px;
+  height: 60px;
+  padding-top: 20px;
+  padding-bottom:80px;
+  border-radius:20px;
+}
+
+map() : elements in array
+function will be applied to all elements
+Fruits.js:
+import React from 'react'
+import './Fruits.css';
+const FruitList=()=>{
+    const fruits=['apple','banana','cherry'];
+    return(
+        <div className='fruitslist'>
+            <h1>Fruits List</h1>
+            <ul>
+                {fruits.map((fruit, index) => (
+                    <li key={index} className={fruit.toLowerCase()}>{fruit}</li>
+                    ))}
+            </ul>
+        </div>
+    )
+}
+export default FruitList;
+
+App.js:
+import React from 'react'
+import './App.css'
+import Fruits from './Fruits'
+
+function App(){
+  return (
+      <Fruits/>
+  )
+}
+export default App;
+
+
+
+//vs code
+App.js:
+import React from 'react'
+import './App.css'
+//import Welcome from'./Welcome'
+//import Greeting from './Greeting'
+//import Fruits from './Fruits'
+
+// function App(){
+//   return (
+//       <Fruits/>
+//   )
+// }
+
+// function App(){
+//   const isLoggedIn=true;
+//   return (
+//     <div className="App">
+//       <Greeting isLoggedIn={isLoggedIn}/>
+//     </div>
+//   );
+// }
+
+// const App=()=>{
+//   return (
+//     <div style={{textAlign:'center',color:'red'}}>
+//       <Welcome name=" Siri" greeting=" Hello"/>
+//       <Welcome name=" Harshini" greeting="Hi"/>
+//     </div>
+//   )
+  
+// }
+
+// const Welcome =()=> <h1 className="message">Hello Siri</h1>
+// function App(){
+//   return (
+//     <div className="App">
+//       <Welcome />
+//     </div>
+//   )
+// }
+
+const TodoList=()=>{
+  const todos=[
+    {id:1,text:"Learn React"},
+    {id:2,text:"Learn Redux"},
+    {id:3,text:"Learn Node"}
+  ];
+  return (
+    <ul>
+      {todos.map(todo=>(
+        <li key={todo.id}>{todo.text}</li>
+        ))}
+    </ul>
+  )
+}
+export default TodoList;
