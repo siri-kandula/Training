@@ -1,0 +1,170 @@
+State:
+In react, state is like a container that holds the data or information for a component.
+This data can be change over time based on user actions or events.
+Why state is important:
+It allows us the component to remember things
+Ex: If you click a button to change the color;
+The state will store hold the color and show on the screen
+State is an essential part in react because it allows components to be dynamic , interactive and capable of responding to user input or change over time.
+1.	useStateHook: useState allows you to add state to functional components.
+Syntax:
+Const[state, setState]=useState(initial value)
+State: current state
+setState: This is a function to update the state
+
+2.	functional Components:
+Syntax:
+Const[statevariable, setStatefunction]=useState(initialvalue)
+1.	Statevariable: holds the current state.
+2.	setStatefunction: A function which is used to update the state
+3.	initial value: The initial value of the state variable when the component first renders.
+
+Example:
+App.js:
+import React, {useState} from 'react';
+import './App.css';
+const Counter=()=>{
+  const[count,setCount]=useState(0);
+  return (
+    <div>
+      <h1>{count}</h1>
+      <button onClick={()=>setCount(count+1)}>Increment</button>
+      <button onClick={()=>setCount(count-1)}>Decrement</button>
+    </div>
+  )
+}
+export default Counter;
+
+App.css:
+/* Center the counter container */
+div {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Style the counter value */
+h1 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Style the buttons */
+button {
+  background-color: #4CAF50; /* Green color */
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1rem;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+/* Change color on hover */
+button:hover {
+  background-color: #45a049;
+}
+
+/* Style the Decrement button separately */
+button:nth-child(3) {
+  background-color: #f44336;
+}
+
+button:nth-child(3):hover {
+  background-color: #d32f2f;
+}
+
+
+
+Example 2:
+App.js:
+import React,{useState} from 'react';
+const ThemeToggler=()=>{
+  const [theme, setTheme] = useState('light');
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+}
+return (
+  <div style={{backgroundColor:theme==='light'?'white':'black' , color:theme==="light"?'black':'white',textAlign:'center'}}>
+    <h1>The Current Theme is {theme}</h1>
+    <button onClick={toggleTheme}>Toggle Theme</button>
+  </div>
+)
+};
+export default ThemeToggler;
+
+
+
+//vs code
+App.js:
+import React,{useState} from 'react';
+const ThemeToggler=()=>{
+  const [theme, setTheme] = useState('light');
+  const toggleTheme = () => {
+    setTheme(theme === 'light' ? 'dark' : 'light');
+}
+return (
+  <div style={{backgroundColor:theme==='light'?'white':'black' , color:theme==="light"?'black':'white',textAlign:'center'}}>
+    <h1>The Current Theme is {theme}</h1>
+    <button onClick={toggleTheme}>Toggle Theme</button>
+  </div>
+)
+};
+export default ThemeToggler;
+
+// import React, {useState} from 'react';
+// import './App.css';
+// const Counter=()=>{
+//   const[count,setCount]=useState(0);
+//   return (
+//     <div>
+//       <h1>{count}</h1>
+//       <button onClick={()=>setCount(count+1)}>Increment</button>
+//       <button onClick={()=>setCount(count-1)}>Decrement</button>
+//     </div>
+//   )
+// }
+// export default Counter;
+
+//App.css
+/* Center the counter container */
+div {
+  text-align: center;
+  margin-top: 50px;
+}
+
+/* Style the counter value */
+h1 {
+  font-size: 3rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Style the buttons */
+button {
+  background-color: #4CAF50; /* Green color */
+  border: none;
+  color: white;
+  padding: 12px 20px;
+  font-size: 1rem;
+  margin: 5px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s ease;
+}
+
+/* Change color on hover */
+button:hover {
+  background-color: #45a049;
+}
+
+/* Style the Decrement button separately */
+button:nth-child(3) {
+  background-color: #f44336;
+}
+
+button:nth-child(3):hover {
+  background-color: #d32f2f;
+}
