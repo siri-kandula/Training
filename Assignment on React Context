@@ -1,0 +1,57 @@
+//React Prop Drilling
+import React from "react";
+
+const Profile = ({ user }) => (
+  <div>
+    <h2>User Profile</h2>
+    <p>Name: {user.name}</p>
+    <p>Email: {user.email}</p>
+  </div>
+);
+
+const NestedComponent = ({ user }) => <Profile user={user} />;
+
+const App = () => {
+  const user = { name: "Siri Chandana", email: "siri@gmail.com" };
+
+  return (
+    <div>
+      <NestedComponent user={user} />
+    </div>
+  );
+};
+
+export default App;
+
+//React UseContext
+import React, { createContext, useContext } from "react";
+
+const UserContext = createContext();
+
+const Profile = () => {
+  const user = useContext(UserContext);
+  return (
+    <div>
+      <h2>User Profile</h2>
+      <p>Name: {user.name}</p>
+      <p>Email: {user.email}</p>
+    </div>
+  );
+};
+
+const NestedComponent = () => <Profile />;
+
+const App = () => {
+  const user = { name: "John Doe", email: "john@example.com" };
+
+  return (
+    <UserContext.Provider value={user}>
+      <div>
+        <h1>React Context Example</h1>
+        <NestedComponent />
+      </div>
+    </UserContext.Provider>
+  );
+};
+
+export default App;
