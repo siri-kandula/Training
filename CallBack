@@ -1,0 +1,122 @@
+React Hooks:
+React Reducer(): A Reducer is a function that helps to update(like score, a list) based on action we take
+1.	Current state: The current value of a state
+2.	Action: add or remove an item
+Example:
+import React, { useReducer } from 'react';
+
+function appleReducer(state, action) {
+  switch (action.type) {
+    case 'ADD_APPLE':
+      return state + 1;
+    case 'EAT_APPLE':
+      return state > 0 ? state - 1 : 0;
+    default:
+      return state;
+  }
+}
+
+function App() {
+  const [state, dispatch] = useReducer(appleReducer, 3);
+
+  return (
+    <div style={{ 
+      padding: '20px', 
+      textAlign: 'center', 
+      backgroundColor: '#f7f7f7', 
+      borderRadius: '10px', 
+      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.2)',
+      maxWidth: '400px', 
+      margin: '20px auto'
+    }}>
+      <h1 style={{ color: '#d32f2f', fontFamily: 'Arial, sans-serif' }}>Apple Counter</h1>
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        gap: '10px', 
+        flexWrap: 'wrap', 
+        padding: '10px', 
+        backgroundColor: '#fff', 
+        borderRadius: '10px' 
+      }}>
+        {[...Array(state)].map((_, index) => (
+          <img 
+            key={index} 
+            src="https://cdn-icons-png.flaticon.com/512/415/415733.png" 
+            alt="Apple" 
+            width="50" 
+            style={{ transition: 'transform 0.2s', cursor: 'pointer' }}
+            onMouseOver={(e) => (e.target.style.transform = 'scale(1.2)')}
+            onMouseOut={(e) => (e.target.style.transform = 'scale(1)')}
+          />
+        ))}
+      </div>
+      <p style={{ fontSize: '18px', fontWeight: 'bold' }}>Number of apples: {state}</p>
+      <button 
+        onClick={() => dispatch({ type: 'ADD_APPLE' })} 
+        style={{ 
+          marginRight: '10px', 
+          padding: '10px', 
+          backgroundColor: '#4caf50', 
+          color: 'white', 
+          border: 'none', 
+          borderRadius: '5px', 
+          cursor: 'pointer' 
+        }}
+      >
+        ADD APPLE
+      </button>
+      <button 
+        onClick={() => dispatch({ type: 'EAT_APPLE' })} 
+        style={{ 
+          padding: '10px', 
+          backgroundColor: '#d32f2f', 
+          color: 'white', 
+          border: 'none', 
+          borderRadius: '5px', 
+          cursor: 'pointer' 
+        }}
+      >
+        EAT APPLE
+      </button>
+    </div>
+  );
+}
+
+export default App;
+
+
+Callback in React:
+A callback is function that is passed as an argument to another function
+Callbacks are often to communicate with different components
+Ex: A parent component passing as callback to a Child
+
+
+App.js:
+import React, {useState} from 'react';
+import Child from './Child.js'
+
+const Parent=()=>{
+  const[message,setMessage]=useState('Hello World')
+
+  const changeMessage=()=>{
+    setMessage("Clicked the button");
+  };
+
+  return(
+    <div>
+      <h1>{message}</h1>
+      <Child changeMessage={changeMessage}/>
+    </div>
+  )
+}
+
+
+Child.js:
+import React from 'react';
+const Child=({changeMessage})=>{
+    return(
+        <button onClick={changeMessage}>Click Me</button>
+    )
+}
+export default Child;
