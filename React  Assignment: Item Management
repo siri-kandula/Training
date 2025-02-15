@@ -1,0 +1,187 @@
+//App.js:
+import React from "react";
+import { ListProvider } from "./ListContext";
+import AddItem from "./AddItem";
+import ItemList from "./ItemList";
+
+const appContainerStyle = {
+  fontFamily: "Arial, sans-serif",
+  textAlign: "center",
+  margin: "20px auto",
+  padding: "20px",
+  border: "1px solid #ddd",
+  borderRadius: "8px",
+  backgroundColor: "#f9f9f9",
+  maxWidth: "400px",
+};
+
+const App = () => {
+  return (
+    <ListProvider>
+      <div style={appContainerStyle}>
+        <h2>Item Management App</h2>
+        <AddItem />
+        <ItemList />
+      </div>
+    </ListProvider>
+  );
+};
+
+export default App;
+
+
+//ListContext.js:
+import React, { createContext, useReducer } from "react";
+import "./styles.css"
+
+// Create the context
+export const ListContext = createContext();
+
+// Initial state
+const initialState = [];
+
+// Reducer function
+const listReducer = (state, action) => {
+  switch (action.type) {
+    case "ADD_ITEM":
+      return [...state, { id: Date.now(), name: action.payload }];
+    case "REMOVE_ITEM":
+      return state.filter(item => item.id !== action.payload);
+    default:
+      return state;
+  }
+};
+
+// Context Provider Component
+export const ListProvider = ({ children }) => {
+  const [list, dispatch] = useReducer(listReducer, initialState);
+
+  return (
+    <ListContext.Provider value={{ list, dispatch }}>
+      {children}
+    </ListContext.Provider>
+  );
+};
+export default ListContext;
+
+//AddItem.js:
+import React, { useState, useContext } from "react";
+import { ListContext } from "./ListContext";
+
+const inputStyle = {
+  padding: "10px",
+  width: "70%",
+  marginRight: "10px",
+  border: "1px solid #ccc",
+  borderRadius: "4px",
+};
+
+const buttonStyle = {
+  padding: "10px 15px",
+  backgroundColor: "#28a745",
+  color: "white",
+  border: "none",
+  borderRadius: "4px",
+  cursor: "pointer",
+};
+
+const buttonHoverStyle = {
+  backgroundColor: "#218838",
+};
+
+const AddItem = () => {
+  const [item, setItem] = useState("");
+  const { dispatch } = useContext(ListContext);
+
+  const addItem = () => {
+    if (item.trim()) {
+      dispatch({ type: "ADD_ITEM", payload: item });
+      setItem("");
+    }
+  };
+
+  return (
+    <div style={{ marginBottom: "20px" }}>
+      <input
+        type="text"
+        value={item}
+        onChange={(e) => setItem(e.target.value)}
+        placeholder="Enter item"
+        style={inputStyle}
+      />
+      <button
+        onClick={addItem}
+        style={buttonStyle}
+        onMouseOver={(e) => (e.target.style.backgroundColor = buttonHoverStyle.backgroundColor)}
+        onMouseOut={(e) => (e.target.style.backgroundColor = buttonStyle.backgroundColor)}
+      >
+        Add Item
+      </button>
+    </div>
+  );
+};
+
+export default AddItem;
+
+ItemList.js:
+import React, { useContext, useMemo } from "react";
+import { ListContext } from "./ListContext";
+
+const listContainerStyle = {
+  textAlign: "left",
+  marginTop: "20px",
+};
+
+const listItemStyle = {
+  margin: "10px 0",
+  padding: "8px",
+  backgroundColor: "#f8f9fa",
+  border: "1px solid #ddd",
+  display: "flex",
+  justifyContent: "space-between",
+  alignItems: "center",
+  borderRadius: "4px",
+};
+
+const removeButtonStyle = {
+  padding: "5px 10px",
+  backgroundColor: "#dc3545",
+  color: "white",
+  border: "none",
+  borderRadius: "4px",
+  cursor: "pointer",
+};
+
+const removeButtonHoverStyle = {
+  backgroundColor: "#c82333",
+};
+
+const ItemList = () => {
+  const { list, dispatch } = useContext(ListContext);
+
+  const memoizedList = useMemo(() => list, [list]);
+
+  return (
+    <div style={listContainerStyle}>
+      <h3 style={{ textAlign: "center" }}>Item List ({memoizedList.length})</h3>
+      <ul style={{ listStyleType: "none", padding: "0" }}>
+        {memoizedList.map((item) => (
+          <li key={item.id} style={listItemStyle}>
+            {item.name}
+            <button
+              onClick={() => dispatch({ type: "REMOVE_ITEM", payload: item.id })}
+              style={removeButtonStyle}
+              onMouseOver={(e) => (e.target.style.backgroundColor = removeButtonHoverStyle.backgroundColor)}
+              onMouseOut={(e) => (e.target.style.backgroundColor = removeButtonStyle.backgroundColor)}
+            >
+              Remove
+            </button>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default ItemList;
+
