@@ -1,0 +1,97 @@
+Event Handling in React:
+Event handling in react is how you make your app do some thing when the user interacts with it, like clicking a button, 
+
+How to use Events in React:
+Use camelCase for event names
+Pass a function to the event
+This function will run when the event happens.
+a.	Click event (onClick):
+function App(){
+  const handleClick=()=>{
+    alert ("Button clicked")
+  };
+  return(
+    <button onClick={handleClick}>Click me</button>
+  )
+}
+export default App;
+
+b.	Change event(onChange):
+Forms: This happens when you type in a textbox
+Key points:
+Target is a property of the event object, and it is predefined by javascript for DOM events
+event.target: always refers the element that triggered the event
+event.target.value: used to access
+Example:
+import React, {useState} from 'react';
+function App(){
+const[text, setText]=useState("");
+
+const handleChange=(event)=>{
+  setText(event.target.value);
+}
+return(
+  <div>
+    <input type="text" value={text} onChange={handleChange} />
+    <p>Text: {text}</p>
+  </div>
+)
+}
+export default App;
+
+
+c.	Mouse events(onMouseEnter, onMouseLeave):
+These happens when we move the mouse over or away from the event.
+Example:
+import React, { useState } from 'react';
+import './App.css';  // Import the CSS file
+
+function App() {
+  const [isHovered, setIsHovered] = useState(false);
+
+  const handleMouseEnter = () => setIsHovered(true);
+  const handleMouseLeave = () => setIsHovered(false);
+
+  return (
+    <div className="container">
+      <button 
+        className="hover-button"
+        onMouseEnter={handleMouseEnter} 
+        onMouseLeave={handleMouseLeave}
+      > 
+        Hover Me!
+      </button>
+      {isHovered && <p className="message">Mouse is over the button!</p>}
+    </div>
+  );
+}
+
+d.	Key events:
+(OnKeyDown):
+Key is pressed on the keyboard.
+Syntax: onKeyDown={keyDownFunction}
+==keyDown function: this a function that euns whenever any key is pressed on the key 
+
+Example:
+import React, { useState } from 'react';
+import './App.css';
+
+function App() {
+  const [key, setKey] = useState("");
+
+  const handleKeyDown = (event) => {
+    setKey(event.key);
+  };
+
+  return (
+    <div className='app'>
+      <h1>React Key Event</h1>
+      {key && <h2>Pressed Key: {key}</h2>}
+      <input type="text" onKeyDown={handleKeyDown} placeholder='Press a key here' />
+    </div>
+  );
+}
+
+export default App;
+
+
